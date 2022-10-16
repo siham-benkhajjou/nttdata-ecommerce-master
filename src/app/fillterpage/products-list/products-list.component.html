@@ -1,0 +1,46 @@
+  <div class="shop__list__product">
+    <div class="row">
+      <div class="col-12">
+        <div *ngFor="let product of productList" class="product__item d-flex">
+          <div class="col-xl-4 col-lg-4 col-md-4 product__item__image">
+            <img src={{product.thumbnail}} alt="">
+          </div>
+          <div class="col-xl-8 col-lg-8 col-md-8 product__item__info">
+            <div class="d-flex">
+              <h4 class="product__item__name">{{product.title}}</h4>
+              <div class="product__item__color_select">
+                <label for="pic-01">
+                  <input type="radio" id="pic-01">
+                </label>
+                <label for="pic-02" class="pink">
+                  <input type="radio" id="pic-02">
+                </label>
+                <label for="pic-03" class="blue">
+                  <input type="radio" id="pic-03">
+                </label>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="product__item__price">
+                <span class="reduced__price">${{calculDescountPrice(product.price,product.discountPercentage)}}</span>
+                <span class="price text-decoration-line-through">${{product.price}}</span>
+              </div>
+              <div class="product__item__rating d-flex">
+                <span *ngFor="let raiting of roundNumberArray(product.rating)" class="iconify rating-color" data-icon="ant-design:star-filled"></span>
+              </div>
+            </div>
+            <p class="product__item__desc">{{product.description}}
+              <br class="d-none d-xl-block"> </p>
+            <div class="product__item__action d-flex">
+              <a href="" title="Add to Cart"><span class="iconify" data-icon="fluent:cart-24-regular"
+                  data-width="20"></span></a>
+              <a href="" title="WishList"><span class="iconify" data-icon="uil:heart-alt" data-width="18"></span></a>
+              <a href="" title="More detail"><span class="iconify" data-icon="uil:search-plus"
+                  data-width="18"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
