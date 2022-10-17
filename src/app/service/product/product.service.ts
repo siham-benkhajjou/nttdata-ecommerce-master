@@ -16,5 +16,11 @@ export class ProductService {
   getAllProduct():Observable<Products[]>{
     return this.http.get<Products[]>("https://dummyjson.com/products");
   }
+  getAllCategories():Observable<any> {
+    return this.http.get<Products[] | any>('https://dummyjson.com/products/categories')
+  }
 
+  getProductByCategory(category: any):Observable<any> {
+    return this.http.get<Products[] | any>('https://dummyjson.com/products/category/' + category)
+  }
 }

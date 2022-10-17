@@ -21,5 +21,8 @@ export class ProductComponent implements OnInit {
     )
 
   }
+  calculDescountPrice(price: number, discountAmount: number) {
+    return Math.round(price - (price * discountAmount / 100));
+  }
 
 }
